@@ -38,3 +38,17 @@ def registered_user(page, base_url):
         "username": username,
         "password": password,
     }
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    report = outcome.get_result()
+
+    if report.when == "call" and report.failed:
+        page = item.funcargs.get("page")
+
+        if page:
+            page.screenshot(
+                path=f"test-results/{item.name}.png",
+                full_page=True
+            )
