@@ -1,12 +1,20 @@
 import random
 import string
+import secrets
 from datetime import date
 
 
 def random_username(prefix: str = "user") -> str:
-
     suffix = "".join(random.choices(string.ascii_lowercase + string.digits, k=8))
     return f"{prefix}_{suffix}"
+
+def random_password(length: int = 16) -> str:
+    characters = (
+        string.ascii_letters
+        + string.digits
+        + string.punctuation.replace(" ", "")
+    )
+    return "".join(secrets.choice(characters) for _ in range(length))
 
 def random_loan_amount() -> int:
     return random.randint(1, 999)
