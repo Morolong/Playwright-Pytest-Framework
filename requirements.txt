@@ -1,0 +1,23 @@
+# Pinned to the exact versions this suite was verified against.
+# (Taken from the environment recorded in the committed reports/test-report.html
+# and confirmed to resolve and run together.)
+#
+# Bump deliberately, then re-run the suite. Enabling Dependabot for "pip" is a
+# good way to keep these current without silent drift.
+
+pytest==9.1.1
+pytest-playwright==0.9.0
+playwright==1.56.0
+
+# Reporting
+pytest-html==4.2.0
+pytest-metadata==3.1.1
+
+# Provides the `base_url` fixture, --base-url and PYTEST_BASE_URL.
+# Pulled in transitively by pytest-playwright, declared here because the suite
+# depends on it directly.
+pytest-base-url==2.1.0
+
+# Used directly in conftest.py to reproduce pytest-playwright's artifact folder
+# names. Also a transitive dependency of pytest-playwright.
+python-slugify==8.0.4
