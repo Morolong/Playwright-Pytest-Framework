@@ -1,1 +1,0 @@
-VALID_USER = {"username": "Client", "password": "Pass123"}
