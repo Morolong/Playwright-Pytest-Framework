@@ -1,4 +1,4 @@
-# ParaBank Playwright + Pytest Test Automation Framework
+# Playwright + Pytest Test Automation Framework
 
 A Python test automation framework built with **Playwright** and **pytest** that exercises the core customer-facing workflows of the [ParaBank](https://parabank.parasoft.com/parabank/index.htm) demo banking application: account registration, login, and loan requests.
 
