@@ -1,7 +1,7 @@
 import pytest
 
 from pages.register_page import RegisterPage
-from test_data.users import VALID_USER
+from utils.random_data import random_password
 from test_data.personal_details import DEFAULT_PERSONAL_DETAILS
 from utils.random_data import random_username
 
@@ -14,7 +14,7 @@ class TestRegister:
 
         user = {
             "username": random_username(),
-            "password": VALID_USER["password"],
+            "password": random_password(),
         }
 
         register_page.register(
@@ -35,7 +35,7 @@ class TestRegister:
 
         user = {
             "username": random_username(),
-            "password": VALID_USER["password"],
+            "password": random_password(),
         }
 
         register_page.go_to_register()
